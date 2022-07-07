@@ -7,6 +7,7 @@ class Album(models.Model):
     artist = models.CharField(max_length=255, null=True, blank=True)
     title = models.CharField(max_length=255, null=True, blank=True)
     create_at = models.DateField(auto_now_add=True, null=True, blank=True)
+    favorite = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title}"

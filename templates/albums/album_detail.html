@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>More Options</h1>
+<h1 class="subtitle">More Options</h1>
 
 <div class="flex flex-wrap">
 
     <div class="w-33 pa3">
-        <h2>{{ album.title }}</h2>
+        <h2 class="is-size-3">{{ album.title }}</h2>
 
-        <div class="flex">
-            <div class="pr2"><i class="icofont-location-pin"></i></div>
+        <div>
+
             <div>
                 {{ album.artist }}<br />
             </div>
@@ -18,6 +18,7 @@
     <p>
         <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
         <a href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>
+        <a href="{% url 'list_albums' %}">Return Home</a><br>
     </p>
 </div>
 {% endblock %}

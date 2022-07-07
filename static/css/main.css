@@ -1,5 +1,7 @@
-.flex {
-    display: flex;
-    color: aquamarine;
-    /* or inline-flex */
+.goldstar {
+    color: goldenrod;
+}
+
+.star {
+    color: black;
 }

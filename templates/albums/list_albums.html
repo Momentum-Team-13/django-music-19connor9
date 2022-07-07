@@ -1,22 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>All Albums</h2>
+<h2 class="subtitle">All Albums</h2>
 <p><a href="{% url 'add_album' %}">Add Album</a></p>
 <p>
 
-<div class="flex">
+<div class="columns">
     {% for album in albums %}
-    <div class="w-33 pa3">
-        <h3>{{ album.title }}</h3>
-        <div class="flex">
-            <div class="pr2"><i class="icofont-artist"></i></div>
+    <div class="column">
+        <h3 class="is-size-3">{{ album.title }}</h3>
+        <div>
             <div>{{ album.artist }}</div>
-
+            {% if album.favorite == True %}
+            <span class='goldstar'> ☆ </span>
+            {% else %}
+            <span class='star'> ☆ </span>
+            {% endif %}
+            <div> </div>
+            <a href="{% url 'album_detail' pk=album.pk %}">More Options</a>
         </div>
     </div>
 
-    <a href="{% url 'album_detail' pk=album.pk %}">More Options</a><br>
+
     </p>
     {% endfor %}
 
